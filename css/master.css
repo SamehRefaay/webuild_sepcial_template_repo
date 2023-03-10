@@ -2,6 +2,7 @@
 :root {
   --primary-color: #f38c2a;
   --secondary-color: #4d4d4d;
+  --main-transition: 0.3s;
 }
 /* End Global Variables */
 * {
@@ -64,6 +65,15 @@ body {
   color: var(--secondary-color);
   font-size: 1em;
   font-weight: bold;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.page .header-area .main-menu li a.active,
+.page .header-area .main-menu li a:hover {
+  color: var(--primary-color);
 }
 /* End Header Area */
 /* Start Landing Page */
