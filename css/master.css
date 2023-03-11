@@ -79,11 +79,11 @@ body {
 /* Start Settings Box */
 .settings-box {
   position: fixed;
-  left: -200px;
+  left: -250px;
   top: 0;
-  width: 200px;
+  width: 250px;
   min-height: 100vh;
-  background-color: white;
+  background-color: rgba(127, 127, 127, 0.3);
   z-index: 200;
   transition: var(--main-transition);
   -webkit-transition: var(--main-transition);
@@ -99,7 +99,7 @@ body {
   height: 30px;
   position: absolute;
   right: -30px;
-  top: 80px;
+  top: 132px;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -107,7 +107,17 @@ body {
   cursor: pointer;
 }
 .settings-box .box-options {
-  padding: 20px;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+  background-color: rgb(237, 237, 237, 0.6);
+}
+.settings-box .box-options:first-of-type {
+  margin-top: 60px;
+}
+.settings-box .box-options h4 {
+  font-size: 16px;
+  color: var(--secondary-color);
 }
 .settings-box .box-options .colors {
   margin: 10px auto;
@@ -122,11 +132,11 @@ body {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  opacity: 0.3;
   cursor: pointer;
 }
 .settings-box .box-options .colors li.active {
-  opacity: 1;
+  border: 2px solid white;
+  outline: 2px solid var(--secondary-color);
 }
 .settings-box .box-options .colors li:first-child {
   background-color: #f38c2a;
@@ -140,10 +150,37 @@ body {
 .settings-box .box-options .colors li:nth-child(4) {
   background-color: #8bc34a;
 }
-
 .settings-box.open .settings-icon {
   animation: fixing 0.8s infinite;
   -webkit-animation: fixing 0.8s infinite;
+}
+.settings-box .random-bg span {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: var(--primary-color);
+  padding: 2px 10px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 2px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: var(--main-transition);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.settings-box .random-bg span.active {
+  opacity: 1;
+  box-shadow: 0 0 4px;
+}
+.settings-box .random-bg .no {
+  margin-left: 5px;
 }
 /* End Settings Box */
 /* Start Landing Page */
@@ -161,7 +198,7 @@ body {
   height: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
 .landing-page .content {
@@ -177,7 +214,6 @@ body {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
 }
-
 /* End Landing Page */
 /* Start Animation */
 @keyframes fixing {
