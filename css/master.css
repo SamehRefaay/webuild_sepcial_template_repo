@@ -76,6 +76,76 @@ body {
   color: var(--primary-color);
 }
 /* End Header Area */
+/* Start Settings Box */
+.settings-box {
+  position: fixed;
+  left: -200px;
+  top: 0;
+  width: 200px;
+  min-height: 100vh;
+  background-color: white;
+  z-index: 200;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.settings-box.open {
+  left: 0;
+}
+.settings-box .toggle-settings {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: -30px;
+  top: 80px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.settings-box .box-options {
+  padding: 20px;
+}
+.settings-box .box-options .colors {
+  margin: 10px auto;
+  width: fit-content;
+}
+.settings-box .box-options .colors li {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  opacity: 0.3;
+  cursor: pointer;
+}
+.settings-box .box-options .colors li.active {
+  opacity: 1;
+}
+.settings-box .box-options .colors li:first-child {
+  background-color: #f38c2a;
+}
+.settings-box .box-options .colors li:nth-child(2) {
+  background-color: #448aff;
+}
+.settings-box .box-options .colors li:nth-child(3) {
+  background-color: #c2185b;
+}
+.settings-box .box-options .colors li:nth-child(4) {
+  background-color: #8bc34a;
+}
+
+.settings-box.open .settings-icon {
+  animation: fixing 0.8s infinite;
+  -webkit-animation: fixing 0.8s infinite;
+}
+/* End Settings Box */
 /* Start Landing Page */
 .landing-page {
   width: 100%;
@@ -109,3 +179,22 @@ body {
 }
 
 /* End Landing Page */
+/* Start Animation */
+@keyframes fixing {
+  0%,
+  100% {
+    transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+  }
+}
+/* End Animation */
