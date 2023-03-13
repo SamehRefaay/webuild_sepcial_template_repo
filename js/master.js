@@ -2,11 +2,31 @@
 var landingPage = document.querySelector(".landing-page");
 const settingsBox = document.querySelector(".settings-box");
 const toggleSettings = document.querySelector(".toggle-settings");
-const colorsOptions = document.querySelectorAll(".colors li");
 const randomBgOptions = document.querySelectorAll(".random-bg span");
+const colorsOptions = document.querySelectorAll(".colors li");
+const header = document.querySelector(".header");
+const topBar = document.querySelector(".top-bar");
+
+//intersection observer
+let options = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.1,
+};
+
+let callback = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      header.classList.add("nav-scrolled");
+    } else {
+      header.classList.remove("nav-scrolled");
+    }
+  });
+};
+let observer = new IntersectionObserver(callback, options);
+observer.observe(topBar);
 
 // change landing page background image
-console.log(randomBgOptions);
 const arrayOfImages = [
   "01.jpg",
   "02.jpg",
