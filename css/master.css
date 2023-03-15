@@ -41,6 +41,78 @@ a {
   }
 }
 /* End Container Screens */
+/* Start Componants */
+.btn-shap {
+  display: inline-block;
+  width: fit-content;
+  line-height: 1;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 15px 35px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.btn-shap.primary {
+  background-color: var(--primary-color);
+}
+.btn-shap.secondary {
+  background-color: var(--secondary-alt-color);
+}
+.btn-shap.primary:hover {
+  background-color: var(--secondary-alt-color);
+}
+.btn-shap.secondary:hover {
+  background-color: var(--primary-color);
+}
+.wrapper {
+  height: fit-content;
+  position: relative;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  background-color: red;
+}
+.wrapper .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: transparent;
+}
+.wrapper img {
+  width: 100%;
+  transform: scale(1);
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+.wrapper:hover img {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+.wrapper:hover .overlay {
+  background-color: var(--primary-color);
+  opacity: 0.5;
+}
+/* End Componants */
 body {
   font-family: "Open Sans", sans-serif;
 }
@@ -55,7 +127,7 @@ body {
   width: 100%;
   z-index: 2;
   height: fit-content;
-  overflow-x: hidden;
+  overflow: hidden;
   transition: var(--main-transition);
   -webkit-transition: var(--main-transition);
   -moz-transition: var(--main-transition);
@@ -350,45 +422,111 @@ body {
   color: #ccc;
 }
 .landing-page .content a {
-  display: inline-block;
-  padding: 15px 25px;
-  margin-top: 25px;
-  font-size: 14px;
-  font-weight: bold;
-  text-transform: uppercase;
-  background-color: var(--primary-color);
-  color: white;
-  transition: var(--main-transition);
-  -webkit-transition: var(--main-transition);
-  -moz-transition: var(--main-transition);
-  -ms-transition: var(--main-transition);
-  -o-transition: var(--main-transition);
-}
-.landing-page .content a:last-child {
-  margin-left: 10px;
-  background-color: white;
-  color: var(--secondary-color);
-}
-.landing-page .content a:hover {
-  color: white;
-  background-color: var(--secondary-alt-color);
+  margin: 30px 10px;
 }
 /* End Landing Page */
 /* Start Why choosing Us */
 /* End Why choosing Us */
 .choose-us {
   background-color: var(--primary-color);
+  height: 400px;
 }
 .choose-us .container {
+  height: 100%;
+  position: relative;
+}
+.choose-us .container .cards-holder {
   display: flex;
-  align-items: center;
+  position: absolute;
+  z-index: 1;
+  top: -80px;
 }
-.choose-us .card {
+.choose-us .cards-holder .card {
+  padding: 30px;
+  width: calc(100% / 3);
   background-color: white;
-  width: 200px;
 }
-.choose-us .card img {
-  width: 210px;
+.choose-us .cards-holder .card.card:nth-child(2) {
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+.choose-us .cards-holder .card img {
+  width: 100%;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+
+.choose-us .cards-holder .card h3 {
+  margin: 20px 0 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+.choose-us .cards-holder .card p {
+  color: var(--secondary-color);
+  font-size: 14px;
+}
+.choose-us .cards-holder .card a {
+  display: block;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.choose-us .cards-holder .card a:hover {
+  text-decoration: underline;
+}
+/* End choose-us */
+/* Start About */
+.about {
+  background-color: var(--primary-color);
+}
+.about .container .upper-content {
+  display: flex;
+  justify-content: space-between;
+}
+.about .text {
+  margin-top: 20px;
+  max-width: 450px;
+  color: var(--secondary-color);
+}
+.about .text h2 {
+  font-size: 34px;
+}
+.about .text p {
+  margin-top: 40px;
+  line-height: 1.7;
+}
+.about .text p:first-of-type {
+  font-size: 21px;
+}
+.about .lower-content {
+  width: fit-content;
+  display: flex;
+  height: fit-content;
+  position: relative;
+  top: -60px;
+}
+.about .lower-content p {
+  color: var(--secondary-color);
+  font-size: 14px;
+  max-width: 400px;
+  line-height: 1.7;
+}
+.about .lower-content .side-img {
+  z-index: 2;
+  position: relative;
+  top: -50px;
+  right: -50px;
+  border: 10px solid var(--primary-color);
+}
+.about .container a {
+  position: relative;
+  top: -50px;
 }
 /* Start Animation */
 @keyframes fixing {
