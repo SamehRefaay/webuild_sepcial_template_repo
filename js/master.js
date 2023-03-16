@@ -119,3 +119,28 @@ randomBgOptions.forEach((option) => {
     }
   });
 });
+
+//***************** lazy loading Images using inetsecting observer */
+const aboutImages = document.querySelectorAll(".about img");
+const imgOptions = {
+  rootMargin: "0px 0px 200px 0px",
+  threshold: 0,
+};
+const imgObserver = new IntersectionObserver((entries, imgObserver) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      return;
+    } else {
+      console.log("intersected now");
+      const img = entry.target;
+      const imageWidth = img.dataset.width;
+      console.log(imageWidth);
+      img.src = img.src.replace("&w=10", "&w=" + imageWidth);
+      imgObserver.unobserve(img);
+    }
+  });
+}, imgOptions);
+aboutImages.forEach((image) => {
+  imgObserver.observe(image);
+});
+//

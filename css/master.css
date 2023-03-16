@@ -504,6 +504,11 @@ body {
 .about .text p:first-of-type {
   font-size: 21px;
 }
+.about .upper-content img {
+  width: 600px;
+  height: auto;
+  object-fit: cover;
+}
 .about .lower-content {
   width: fit-content;
   display: flex;
@@ -518,6 +523,9 @@ body {
   line-height: 1.7;
 }
 .about .lower-content .side-img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
   z-index: 2;
   position: relative;
   top: -50px;
