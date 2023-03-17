@@ -190,7 +190,7 @@ body {
   width: 60px;
 }
 .nav-scrolled .logo img {
-  content: url("../images/logo.png");
+  content: url("../images/logo2.png");
   margin-top: 10px;
 }
 .header .nav-bar .logo .company-name > span {
@@ -578,6 +578,52 @@ body {
   position: relative;
   top: -50px;
 }
+/* Start Services */
+.services {
+  padding: 90px 0;
+}
+.services h2 {
+  margin: 0 auto;
+  width: fit-content;
+  color: var(--secondary-color);
+}
+.services h2 + p {
+  margin: 10px auto;
+  width: fit-content;
+  color: var(--secondary-color);
+}
+.services .container {
+  margin-top: 90px;
+  gap: 50px;
+  display: flex;
+  align-items: center;
+}
+.services .service {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+.services .service img {
+  width: 60px;
+  height: auto;
+}
+.services .container > img {
+  width: 300px;
+  height: auto;
+}
+.services .service .text {
+  color: var(--secondary-color);
+}
+.services .service h3 {
+  margin-bottom: 10px;
+}
+.services .service p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+/* End Services */
+
 /* Start Animation */
 @keyframes fixing {
   0%,
