@@ -120,7 +120,46 @@ randomBgOptions.forEach((option) => {
   });
 });
 
-//***************** lazy loading Images using inetsecting observer */
+//***************** Choose us ***************/
+// popup when click on images of choose us
+const chooseUsImages = document.querySelectorAll(".choose-us img");
+const chooseUsOverlays = document.querySelectorAll(".choose-us .overlay");
+
+console.log(chooseUsImages);
+let showPopup = function (e) {
+  //create page overlay and adding it to body
+  const pageOverlay = document.createElement("div");
+  pageOverlay.className = "page-overlay";
+  document.body.appendChild(pageOverlay);
+  //create popup-box and adding it to body
+  const popupBox = document.createElement("div");
+  popupBox.className = "popup-box";
+  //create popup image and adding it to popup
+  const popupImage = document.createElement("img");
+  popupImage.src = e.target.nextElementSibling.src;
+  popupBox.appendChild(popupImage);
+  document.body.appendChild(popupBox);
+  //create popup close button
+  const popupCloseBtn = document.createElement("span");
+  popupCloseBtn.className = "popup-close-btn";
+  popupCloseBtn.innerText = "X";
+  console.log(popupCloseBtn);
+  popupBox.appendChild(popupCloseBtn);
+};
+//show popup
+chooseUsOverlays.forEach((overlay) => {
+  overlay.addEventListener("click", showPopup);
+});
+//close popup
+document.addEventListener("click", (e) => {
+  if (e.target.className === "popup-close-btn") {
+    e.target.parentElement.remove();
+    document.querySelector(".page-overlay").remove();
+  }
+});
+
+//***************** About us ***************/
+//lazy loading Images using inetsecting observer
 const aboutImages = document.querySelectorAll(".about img");
 const imgOptions = {
   rootMargin: "0px 0px 200px 0px",
